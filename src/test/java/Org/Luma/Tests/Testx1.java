@@ -99,7 +99,7 @@ public class Testx1 {
             sleep(2500);
     }
 
-   /* @AfterMethod
+    @AfterMethod
     public  void getResult(ITestResult result) {
         if (result.getStatus() == ITestResult.FAILURE) {
             ExtentHtmlReporter.test.log(Status.FAIL, result.getThrowable());
@@ -109,6 +109,6 @@ public class Testx1 {
         } else {
             ExtentHtmlReporter.test.log(Status.SKIP, result.getTestName());
         }
-    }*/
+    }
 
 }
