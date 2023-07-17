@@ -40,66 +40,32 @@ public class Testx1 {
        ExtentHtmlReporter.flushReports();
    }
 
-/* @Parameters ("Browser")
-@BeforeClass
-    public void Setup(String browser) {
-    driver = new ChromeDriver();
-   *//* if (browser.equalsIgnoreCase("chrome")) {
+    @Test  //this will open the browser up (basically connecting to the web)
+    public void part1() throws InterruptedException, IOException {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-
-    } else if (browser.equalsIgnoreCase("edge")) {
-        WebDriverManager.edgedriver().setup();
-        driver = new EdgeDriver();
-    } else {
-        throw new IllegalArgumentException("Invalid browser name: " + browser);
-    }*//*
-    driver.manage().window().maximize();
-    driver.get("https://magento.softwaretestingboard.com ");
-}
-
-@Test
-    public void testsetup() {
-
-}*/
-
-    @Test (priority = 1)   //this will open the browser up (basically connecting to the web)
-    public void Setup(){
-        WebDriverManager.chromedriver().setup();
-       // driver.manage().window().maximize();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-    }
-
-    @Test (priority = 2)   //this one will load the designated website to test
-    public void openbrowser() throws InterruptedException {
         driver.get("https://magento.softwaretestingboard.com");
         sleep(2000);
-    }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    @Test (priority = 3)
-    public void Login() throws InterruptedException {
         driver.findElement(By.linkText("Sign In")).click();
         sleep(2500);
-
         driver.findElement(By.id("email")).sendKeys("J_3son1@gmail.com");
         driver.findElement(By.id("pass")).sendKeys("n5!Krg@6RcbKFmY");
         sleep(2500);
-
         driver.findElement(By.xpath("//*[@id=\"send2\"]/span")).click();
-    }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    @Test (priority = 4)
-    public static void tee()throws InterruptedException, IOException {
-         ExtentHtmlReporter.test  = createTest("Three Stars Tee");
-            Tees.navigateToTopsTees();
-            Tees.selectThreeStarsTee();
+        ExtentHtmlReporter.test  = createTest("Three Stars Tee");
+        Tees.navigateToTopsTees();
+        Tees.selectThreeStarsTee();
         cart.threeStarsAddToCart();
         Validations.EmptyFields();
-            sleep(2500);
+        sleep(2500);
     }
 
-    @AfterMethod
+    /*@AfterMethod
     public  void getResult(ITestResult result) {
         if (result.getStatus() == ITestResult.FAILURE) {
             ExtentHtmlReporter.test.log(Status.FAIL, result.getThrowable());
@@ -109,6 +75,6 @@ public class Testx1 {
         } else {
             ExtentHtmlReporter.test.log(Status.SKIP, result.getTestName());
         }
-    }
+    }*/
 
 }
