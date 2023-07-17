@@ -25,7 +25,7 @@ public class ExtentHtmlReporter {
     public static ExtentReports extent;
     public static ExtentSparkReporter spark;
     public static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-    public static String FileReporter ="C:\\Users\\Digi_WS\\IdeaProjects\\LumaDrive\\src\\test\\java\\Org\\Luma\\Reporters_" +timeStamp +".html";
+    public static String FileReporter ="C:\\Users\\Digi_WS\\IdeaProjects\\LumaDrive\\src\\test\\java\\Org\\Luma\\Extentweb\\Reporters_" +timeStamp +".html";
     /*ExtentHtmlReporter htmlReporter =  new
             ExtentHtmlReporter(System.getProperty("C:\\Users\\Digi_WS\\IdeaProjects\\LumaDrive\\src\\test\\java\\Org\\Luma\\Reporters")
             +"/Reporters/extentReport.html");*/
